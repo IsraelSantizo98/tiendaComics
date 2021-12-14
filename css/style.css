@@ -45,12 +45,18 @@ h1{
 h2{
     font-size: 4rem;
 }
+h3{
+    font-size: 3.2rem;
+}
 a{
     text-decoration: none;
     color: var(--blanco);
 }
 li{
     list-style: none;
+}
+img{
+    max-width: 100%;
 }
 /* Utilidades */
 .contenedor{
@@ -63,6 +69,19 @@ li{
 .centrar-texto{
     text-align: center;
 }
+.section{
+    margin-top: 5rem;
+}
+.btn{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color: red;
+    width: 20rem;
+}
+.imgH{
+    height: 48rem;
+}
 .header{
     background-image: url(../img/hxh.png);
     background-position: center top;
@@ -70,9 +89,6 @@ li{
     background-size: cover;
     height: 60rem;
     /* opacity: .5; */
-}
-.barra{
-    
 }
 .barra{
     background-color: var(--negro);
@@ -108,4 +124,18 @@ li{
     .header__texto{
         margin-top: 15rem;
     }
+}
+/*Contendido principal*/
+.contenido-principal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 4rem;
+}
+.producto{
+    margin: 0 auto;
+}
+/*Footer*/
+.footer{
+    background-color: var(--negro);
 }
