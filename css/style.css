@@ -78,6 +78,18 @@ img{
     margin: 0 auto;
     background-color: red;
     width: 20rem;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem 2rem;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.badge{
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+.capsulas{
+    background-color: #e08709;
 }
 .imgH{
     height: 48rem;
@@ -139,7 +151,10 @@ img{
     gap: 4rem;
 }
 .producto{
-    margin: 0 auto;
+    transition: all 0.5s ease-in-out;
+}
+.producto:hover{
+    transform: scale(1.1);
 }
 /*Footer*/
 .footer{
@@ -164,5 +179,5 @@ img{
 .contenido__recomendados{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
+    column-gap: 4rem;
 }
