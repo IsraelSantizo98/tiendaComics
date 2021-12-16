@@ -100,7 +100,10 @@ img{
 .border-top{
     border-top: 1rem solid var(--negro);
 }
-.header{
+.border-descuento{
+    text-decoration: line-through;
+}
+.principal{
     background-image: url(../img/hxh.png);
     background-position: center top;
     background-repeat: no-repeat;
@@ -108,8 +111,21 @@ img{
     height: 60rem;
     /* opacity: .5; */
 }
+.secundario{
+    background-image: url(../img/chainsawmanbanner.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60rem;
+}
+@media (min-width: 2560px){
+    .secundario{
+        height: 80rem;
+    }
+}
 .barra{
-    background-color: var(--negro);
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem;
 }
 @media (min-width: 768px){
     .barra{
@@ -180,4 +196,9 @@ img{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 4rem;
+}
+/*Oferta*/
+.contenido-oferta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
