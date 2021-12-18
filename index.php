@@ -1,7 +1,3 @@
-<?php
-    include 'php/conection.php';
-    include 'php/search.php';
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,12 +15,12 @@
 <body>
     <header class="principal">
         <div class="barra">
-            <a href="index.html">
+            <a href="index.php">
                 <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
             </a>
             <nav>
                 <ul class="menu">
-                    <li><a href="#" class="link">Catalogo</a></li>
+                    <li><a href="catalogo.php" class="link">Catalogo</a></li>
                     <li><a href="ofertas.html" class="link">Ofertas</a></li>
                     <li><a href="#" class="link">Cuenta</a></li>
                 </ul>
@@ -42,10 +38,6 @@
     <div class="contenedor">
         <h3 class="centrar-texto ">Recien Ingresados</h3>
         <main class="contenido-principal section">
-            <?php
-                WHILE ($row = mysqli_fetch_array($sql_query)){?>
-
-                <?php } ?>
             <div class="producto">
                 <div class="producto__imagen">
                     <picture>
