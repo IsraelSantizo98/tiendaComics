@@ -1,3 +1,6 @@
+<?php
+    include 'php/conection.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,11 +24,11 @@
             <nav>
                 <ul class="menu">
                     <li><a href="catalogo.php" class="link">Catalogo</a></li>
-                    <li><a href="ofertas.html" class="link">Ofertas</a></li>
-                    <li><a href="#" class="link">Cuenta</a></li>
+                    <li><a href="ofertas.php" class="link">Ofertas</a></li>
+                    <li><a href="cuenta.php" class="link">Cuenta</a></li>
                 </ul>
             </nav>
-            <form action="search.php" method="POST">
+            <form action="catalogo.php" method="POST">
                 <input type="text" name="buscar">
                 <input type="submit" value="Buscar">
             </form>
@@ -36,62 +39,28 @@
         </div>
     </header>
     <div class="contenedor">
-        <h3 class="centrar-texto ">Recien Ingresados</h3>
+        <h2 class="centrar-texto ">Ultimos Ingresados</h2>
         <main class="contenido-principal section">
-            <div class="producto">
+            <?php
+                $instruccion = "Select * FROM catalogo ORDER BY nombre, volumen ASC limit 6";
+                $query = mysqli_query($conection, $instruccion);
+                while ($row = mysqli_fetch_assoc($query)){?>
+                    <div class="producto">
                 <div class="producto__imagen">
                     <picture>
                         <a href="producto.html">
-                            <img src="img/chainsawman1.jpg" alt="Chainsaw Man V1">
+                            <img src="<?= $row['portada']?>" alt="Chainsaw Man V1" class="imgH">
                         </a>
                     </picture>
+                    <h3 class="no-margin"><?= $row ['nombre']?> #<?= $row['volumen']?></h3>
+                    <p class="no-margin"><?= $row['volumen']?></p>
+                    <p class="no-margin">Q<?= $row['precio']?>.00</p>
+                    <p><?= $row['idCatalogo']?></p>
                 </div>
             </div>
-            <div class="producto">
-                <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html">
-                            <img src="img/chainsawman2.jpg" alt="Chainsaw Man V2">
-                        </a>
-                    </picture>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html">
-                            <img src="img/chainsawman3.jpg" alt="Chainsaw Man V3">
-                        </a>
-                    </picture>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html">
-                            <img src="img/chainsawman4.jpg" alt="Chainsaw Man V4">
-                        </a>
-                    </picture>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html">
-                            <img src="img/chainsawman5.jpg" alt="Chainsaw Man V5" class="imgH">
-                        </a>
-                    </picture>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html">
-                            <img src="img/chainsawman6.jpg" alt="Chainsaw Man V6" >
-                        </a>
-                    </picture>
-                </div>
-            </div>
+            <?php    
+                }
+            ?>
         </main>    
     </div>
     <footer class="footer section">

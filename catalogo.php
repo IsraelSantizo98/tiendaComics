@@ -1,6 +1,6 @@
 <?php
     include 'php/conection.php';
-    include 'php/search.php';
+    include 'buscar.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +30,7 @@
                 </ul>
             </nav>
             <form action="catalogo.php" method="POST">
-                <input type="text" name="buscar" >
+                <input type="text" name="buscar">
                 <input type="submit" value="Buscar">
             </form>
         </div>
