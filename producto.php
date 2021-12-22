@@ -1,3 +1,7 @@
+<?php
+    include 'php/conection.php';
+    $idProducto = $_GET['codProducto'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +19,7 @@
 <body>
     <header>
         <div class="barra">
-            <a href="index.html">
+            <a href="index.php">
                 <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
             </a>
             <nav>
@@ -29,27 +33,35 @@
     </header>
     <div class="contenedor section">
         <main class="contenido-producto">
+            <?php
+                $instruccion = "SELECT * FROM catalogo
+                INNER JOIN editorial ON catalogo.FK_editorial = editorial.idEditorial
+                INNER JOIN categoria ON catalogo.FK_categoria = categoria.idCategoria
+                WHERE idCatalogo = '$idProducto'";
+                //$instruccion = "SELECT * FROM catalogo WHERE idCatalogo = '$idProducto'";
+                $query = mysqli_query($conection, $instruccion);
+                while ($row = mysqli_fetch_assoc($query)) {
+            ?>
             <div class="producto__imagen">
                 <picture>
-                    <img src="img/chainsawman1.jpg" alt="Chainsaw Man V1">
+                    <img src="<?= $row['portada']?>" alt="Chainsaw Man V1" class="imgH">
                 </picture>
             </div>
             <div class="producto__descripcion">
-                <h2>Chainsaw Man VOl 1</h2>
-                <p class="centrar-texto">
-                    Denji es un chico huérfano y pobre que trabaja como devil hunter junto con Pochita, eldemonio perruno de la motosierra, para unos yakuza. Estos también desean el poder de losdemonios y atacan a Denji y a Pochita, pero, al borde de la muerte, los dos se unen paraformar a Chainsaw Man y logran salvarse. Makima, una devil hunter de Seguridad Pública,llega a la escena y recluta a Denji para que trabaje para ella. Y la promesa de una vidamejor trabajando al lado de la bella joven lo motiva
-                </p>
+                <h2 class="no-margin"><?= $row['nombre']?></h2>
+                <span>Volumen <?= $row['volumen']?></span>
+                <p class="centrar-texto"><?= $row['descripcion']?></p>
             </div>
             <div class="producto__badge">
                 <p class="centrar-texto">
-                    <span class="capsulas badge">Shonen</span>
-                    <span class="capsulas badge">Fantasy</span>
-                    <span class="capsulas badge">Horror</span>
+                    <span class="capsulas badge"><?= $row['genero']?></span>
+                    <span class="capsulas badge"><?= $row['genero']?></span>
+                    <span class="capsulas badge"><?= $row['genero']?></span>
                 </p>
             </div>
             <div class="producto__precio">
-                <p class="centrar-texto">Existencia 20</>
-                <p class="centrar-texto">Q100.00</>
+                <p class="centrar-texto">Existencia <?= $row['existencia']?></>
+                <p class="centrar-texto">Q<?= $row['precio']?>.00</>
                 <div class="producto__comprar">
                     <a href="#" class="btn btn-primario">Comprar</a>
                 </div>
@@ -60,13 +72,16 @@
             <ul class="centrar-texto">
                 <li>Tipo de producto: <span class="texto-bold">Individuales</span></li>
                 <li>Categorías: <span class="texto-bold">Mangas</span></li>
-                <li>Marcas: <span class="texto-bold">Panini Manga</span></li>
-                <li>Autor(es): <span class="texto-bold">Tatsuki Fujimoto</span></li>
-                <li>Número de páginas: <span>192</span></li>
+                <li>Marca: <span class="texto-bold"><?= $row['nombreEdi']?></span></li>
+                <!-- <li>Autor(es): <span class="texto-bold">Tatsuki Fujimoto</span></li> -->
+                <li>Número de páginas: <span><?= $row['paginas']?></span></li>
                 <li>Encuadernación: <span class="texto-bold">TPB Pasta Suave</span></li>
-                <li>Fecha de lanzamiento: <span class="texto-bold">03/03/2021</span></li>
+                <li>Fecha de lanzamiento: <span class="texto-bold"><?= $row['fechaLanzamiento']?></span></li>
             </ul>
         </div>
+        <?php
+            }
+        ?>
         <div class="producto__recomendados section">
             <h2>Recomendados</h2>
             <div class="contenido__recomendados">

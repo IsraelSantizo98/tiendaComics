@@ -46,9 +46,14 @@
                 <div class="producto">
                     <div class="producto__imagen">
                         <picture>
-                            <a href="producto.html">
-                                <img src="<?= $row['portada']?>" alt="">
-                            </a>
+                        <?php
+                            echo "<a href='producto.php?codProducto=".$row['idCatalogo']."'>";
+                        ?>
+                                <img src="<?= $row['portada']?>" alt="" class="imgH">
+                        <?php
+                            echo "<p>".$row['idCatalogo']."</p>";
+                            echo "</a>";
+                        ?>
                         </picture>
                     </div>
                 </div>

@@ -48,9 +48,14 @@
                     <div class="producto">
                 <div class="producto__imagen">
                     <picture>
-                        <a href="producto.html">
-                            <img src="<?= $row['portada']?>" alt="Chainsaw Man V1" class="imgH">
-                        </a>
+                        <?php
+                            echo "<a href='producto.php?codProducto=".$row['idCatalogo']."'>";
+                        ?>
+                                <img src="<?= $row['portada']?>" alt="" class="imgH">
+                        <?php
+                            echo "<p>".$row['idCatalogo']."</p>";
+                            echo "</a>";
+                        ?>
                     </picture>
                     <h3 class="no-margin"><?= $row ['nombre']?> #<?= $row['volumen']?></h3>
                     <p class="no-margin"><?= $row['volumen']?></p>
