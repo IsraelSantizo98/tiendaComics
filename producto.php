@@ -37,6 +37,7 @@
                 $instruccion = "SELECT * FROM catalogo
                 INNER JOIN editorial ON catalogo.FK_editorial = editorial.idEditorial
                 INNER JOIN categoria ON catalogo.FK_categoria = categoria.idCategoria
+                INNER JOIN pasta ON catalogo.FK_pasta = pasta.idPasta
                 WHERE idCatalogo = '$idProducto'";
                 //$instruccion = "SELECT * FROM catalogo WHERE idCatalogo = '$idProducto'";
                 $query = mysqli_query($conection, $instruccion);
@@ -75,7 +76,7 @@
                 <li>Marca: <span class="texto-bold"><?= $row['nombreEdi']?></span></li>
                 <!-- <li>Autor(es): <span class="texto-bold">Tatsuki Fujimoto</span></li> -->
                 <li>Número de páginas: <span><?= $row['paginas']?></span></li>
-                <li>Encuadernación: <span class="texto-bold">TPB Pasta Suave</span></li>
+                <li>Encuadernación: <span class="texto-bold"><?= $row['tipoPasta']?></span></li>
                 <li>Fecha de lanzamiento: <span class="texto-bold"><?= $row['fechaLanzamiento']?></span></li>
             </ul>
         </div>
