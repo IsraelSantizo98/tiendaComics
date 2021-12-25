@@ -36,6 +36,8 @@
             <?php
                 $instruccion = "SELECT * FROM catalogo
                 INNER JOIN editorial ON catalogo.FK_editorial = editorial.idEditorial
+                INNER JOIN saga ON catalogo.FK_saga = saga.idSaga
+                INNER JOIN precio ON catalogo.FK_precio = precio.Idprecio
                 INNER JOIN categoria ON catalogo.FK_categoria = categoria.idCategoria
                 INNER JOIN pasta ON catalogo.FK_pasta = pasta.idPasta
                 WHERE idCatalogo = '$idProducto'";
@@ -62,7 +64,7 @@
             </div>
             <div class="producto__precio">
                 <p class="centrar-texto">Existencia <?= $row['existencia']?></>
-                <p class="centrar-texto">Q<?= $row['precio']?>.00</>
+                <p class="centrar-texto">Q<?= $row['precioNormal']?>.00</>
                 <div class="producto__comprar">
                     <a href="#" class="btn btn-primario">Comprar</a>
                 </div>

@@ -42,7 +42,10 @@
         <h2 class="centrar-texto ">Ultimos Ingresados</h2>
         <main class="contenido-principal section">
             <?php
-                $instruccion = "Select * FROM catalogo ORDER BY nombre, volumen ASC limit 6";
+                $instruccion = "Select * FROM catalogo 
+                INNER JOIN saga ON catalogo.Fk_saga = saga.idSaga
+                INNER JOIN precio ON catalogo.FK_precio = precio.idPrecio
+                ORDER BY nombre, volumen ASC limit 6";
                 $query = mysqli_query($conection, $instruccion);
                 while ($row = mysqli_fetch_assoc($query)){?>
                     <div class="producto">
@@ -59,7 +62,7 @@
                     </picture>
                     <h3 class="no-margin"><?= $row ['nombre']?> #<?= $row['volumen']?></h3>
                     <p class="no-margin"><?= $row['volumen']?></p>
-                    <p class="no-margin">Q<?= $row['precio']?>.00</p>
+                    <p class="no-margin">Q<?= $row['precioNormal']?>.00</p>
                     <p><?= $row['idCatalogo']?></p>
                 </div>
             </div>
