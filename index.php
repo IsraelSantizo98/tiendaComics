@@ -42,28 +42,30 @@
         <h2 class="centrar-texto ">Ultimos Ingresados</h2>
         <main class="contenido-principal section">
             <?php
-                $instruccion = "Select * FROM catalogo 
+                $instruccion = "SELECT * FROM producto
+                INNER JOIN saga ON producto.FK_saga = saga.idSaga
+                INNER JOIN precio ON producto.FK_precio = precio.idPrecio";
+                /*$instruccion = "Select * FROM producto 
                 INNER JOIN saga ON catalogo.Fk_saga = saga.idSaga
                 INNER JOIN precio ON catalogo.FK_precio = precio.idPrecio
                 ORDER BY nombre, volumen ASC limit 6";
+                */
                 $query = mysqli_query($conection, $instruccion);
                 while ($row = mysqli_fetch_assoc($query)){?>
                     <div class="producto">
                 <div class="producto__imagen">
                     <picture>
                         <?php
-                            echo "<a href='producto.php?codProducto=".$row['idCatalogo']."'>";
+                            echo "<a href='producto.php?codProducto=".$row['idProducto']."'>";
                         ?>
                                 <img src="<?= $row['portada']?>" alt="" class="imgH">
                         <?php
-                            echo "<p>".$row['idCatalogo']."</p>";
+                            echo "<p>".$row['idProducto']."</p>";
                             echo "</a>";
                         ?>
                     </picture>
-                    <h3 class="no-margin"><?= $row ['nombre']?> #<?= $row['volumen']?></h3>
-                    <p class="no-margin"><?= $row['volumen']?></p>
-                    <p class="no-margin">Q<?= $row['precioNormal']?>.00</p>
-                    <p><?= $row['idCatalogo']?></p>
+                    <h3 class="no-margin"><?= $row ['nombreSaga']?> #<?= $row['volumen']?></h3>
+                    <p class="no-margin">Q<?= $row['precio']?>.00</p>
                 </div>
             </div>
             <?php    
