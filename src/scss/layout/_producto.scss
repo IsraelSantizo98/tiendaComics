@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.contenido-principal{
+    @include m.gridRow(3, 4rem);
+    .producto{
+        transition: all 0.5s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+        }
+        .producto__imagen,
+        .producto__descripcion{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
