@@ -24,7 +24,7 @@ function versionWebp(done){
         quality: 100
     };
     //La ruta donde se guarda los archivos convertidos y que sean con la extensiones en parentesis
-    src('src/img/**/*.{png, jpg}')
+    src('src/img/**/*.{png,jpg}')
         //Se pasa el parametro de la calidad de las imagenes
         .pipe(webp(opciones))
         //Ruta de destino o guradado
