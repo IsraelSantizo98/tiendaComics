@@ -1,0 +1,32 @@
+{
+  "name": "catalogomangas",
+  "version": "1.0.0",
+  "description": "Pagina de venta de comics y manga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsraelSantizo98/tiendaComics.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp",
+    "PHP",
+    "y",
+    "HTML"
+  ],
+  "author": "Israel Santizo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsraelSantizo98/tiendaComics/issues"
+  },
+  "homepage": "https://github.com/IsraelSantizo98/tiendaComics#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.45.2"
+  }
+}
