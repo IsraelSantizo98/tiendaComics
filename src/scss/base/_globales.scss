@@ -8,6 +8,10 @@ html{
 *:after{
     box-sizing: inherit;
 }
+h1, h2, h3{
+    font-family: v.$fuente_titulos;
+    line-height: 1.2;
+}
 h1{
     font-size: 4rem;
 }
@@ -19,8 +23,52 @@ h3{
 }
 img{
     max-width: 100%;
-display:block;
+    display:block;
+}
+.imgH{
+    height: 48rem;
 }
 a{
     text-decoration: none;
+    color: v.$blanco;
+}
+li{
+    list-style: none;
+}
+body{
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+}
+//Utilidades
+.contenedor{
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+.no-margin{
+    margin: 0;
+}
+.centrar-texto{
+    text-align: center;
+}
+.section{
+    margin-top: 5rem;
+}
+.btn{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color: v.$rojo;
+    width: 20rem;
+    transition: all .5s ease-in-out;
+    padding: 1rem 2rem;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.texto-bold{
+    font-weight: bold; /*700*/
+}
+.border-top{
+    border-top: 1rem solid v.$negro;
 }
