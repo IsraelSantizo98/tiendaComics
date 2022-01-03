@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+html{ 
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 3rem;
+}
+img{
+    max-width: 100%;
+display:block;
+}
+a{
+    text-decoration: none;
+}
