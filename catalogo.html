@@ -1,15 +1,10 @@
-<?php
-    include 'php/conection.php';
-    include 'buscar.php';
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="build/css/app.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -17,16 +12,16 @@
     <title>MangaGT</title>
 </head>
 <body>
-    <header class="">
+    <header class="secundario">
         <div class="barra">
-            <a href="index.php">
+            <a href="index.html">
                 <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
             </a>
             <nav>
                 <ul class="menu">
-                    <li><a href="catalogo.php" class="link">Catalogo</a></li>
+                    <li><a href="catalogo.html" class="link">Catalogo</a></li>
                     <li><a href="ofertas.html" class="link">Ofertas</a></li>
-                    <li><a href="#" class="link">Cuenta</a></li>
+                    <li><a href="cuenta.html" class="link">Cuenta</a></li>
                 </ul>
             </nav>
             <form action="catalogo.php" method="POST">
@@ -34,30 +29,109 @@
                 <input type="submit" value="Buscar">
             </form>
         </div>
-        <div class="header__texto">
-            <h2 class="no-margin">Lo más te gusta en un mismo lugar</h2>
-            <p class="no-margin">Todo del mundo del Manga</p>
-        </div>
     </header>
     <div class="contenedor">
-        <main class="contenido-principal section">
-        <?php
-            WHILE ($row = mysqli_fetch_array($sql_query)){?>
+        <h2 class="centrar-texto">Inventario</h2>
+        <main class="contenido-grid section">
                 <div class="producto">
                     <div class="producto__imagen">
                         <picture>
-                        <?php
-                            echo "<a href='producto.php?codProducto=".$row['idCatalogo']."'>";
-                        ?>
-                                <img src="<?= $row['portada']?>" alt="" class="imgH">
-                        <?php
-                            echo "<p>".$row['idCatalogo']."</p>";
-                            echo "</a>";
-                        ?>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
+                            </a>
                         </picture>
+                        <h3 class="no-margin">Fire Force</h3>
+                        <p class="no-margin">100.00</p>
                     </div>
-                </div>
-                    <?php } ?>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/jujutsu1.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Jujutsu Kaisen</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/kimetsu1.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Demon Slayer</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/onepunch1.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">One Punch</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/onepunch10.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">One Punch</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/ataquetitanes22.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Ataque de los Titanes</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/blackcover1.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Black Clover</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/chainsawman6.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Chainsaw Man</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
+                <div class="producto">
+                    <div class="producto__imagen">
+                        <picture>
+                            <a href="catalogo.html" alt="Portada Manga">
+                                <img src="build/img/chainsawman2.webp" alt="Portada Manga" class="imgH">
+                            </a>
+                        </picture>
+                        <h3 class="no-margin">Chainsaw Man</h3>
+                        <p class="no-margin">100.00</p>
+                    </div>
+                </div><!--/producto-->
         </main>
     </div>
     <footer class="footer section">
