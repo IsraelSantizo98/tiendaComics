@@ -32,7 +32,7 @@ img {
 }
 
 .imgH {
-  height: 48rem;
+  height: 30rem;
 }
 
 a {
@@ -71,8 +71,6 @@ body {
   display: block;
   text-align: center;
   margin: 0 auto;
-  background-color: #ff0000;
-  width: 20rem;
   transition: all 0.5s ease-in-out;
   padding: 1rem 2rem;
 }
@@ -80,9 +78,18 @@ body {
   transform: scale(1.1);
 }
 
+.buscar {
+  width: 5rem;
+}
+
 .texto-bold {
   font-weight: bold;
   /*700*/
+}
+
+.texto-normal {
+  font-weight: normal;
+  /*400*/
 }
 
 .border-top {
@@ -430,41 +437,66 @@ template {
 
 .principal {
   background-image: url(../../../build/img/hxh.webp);
-  background-position: center top;
+  background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 60rem;
 }
 .principal .barra {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
 }
-.principal .barra .logo__nombres {
-  font-weight: normal;
-  /*Normal*/
-}
-.principal .barra .logo__bold {
-  font-weight: 700;
+.principal .barra .logo__texto {
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 .principal .barra .menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
   height: 100%;
 }
 .principal .barra .menu .link {
   margin-right: 2rem;
 }
+.principal .barra .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  width: 100%;
+  height: 3rem;
+}
+.principal .barra .form input {
+  border-radius: 1rem;
+  width: 100%;
+  border: none;
+}
+.principal .barra .form input:focus-visible {
+  outline: none;
+}
+.principal .barra .form button {
+  border: none;
+  background-color: #fff;
+}
 @media (min-width: 768px) {
   .principal .barra {
     display: flex;
     justify-content: space-around;
   }
+  .principal .barra .logo {
+    padding: 1rem;
+  }
 }
 .principal .header__texto {
-  margin-top: 5rem;
+  margin-top: 12rem;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 0;
 }
 @media (min-width: 768px) {
   .principal .header__texto {
@@ -514,7 +546,7 @@ template {
 
 .contenido-principal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 4rem;
 }
@@ -524,10 +556,76 @@ template {
 .contenido-principal .producto:hover {
   transform: scale(1.1);
 }
-.contenido-principal .producto .producto__imagen,
-.contenido-principal .producto .producto__descripcion {
+
+.contenido-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+.contenido-grid .producto {
+  transition: all 0.5s ease-in-out;
+}
+.contenido-grid .producto:hover {
+  transform: scale(1.1);
+}
+
+.producto__imagen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.producto__imagen .border-descuento {
+  text-decoration: line-through;
+}
+.producto__imagen .font-descuento {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.producto__imagen .font-precio {
+  font-size: 2rem;
+}
+
+.secundario {
+  background-image: url(../../../build/img/chainsawmanbanner.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  height: 60rem;
+}
+.secundario .barra {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+}
+.secundario .barra .logo__nombres {
+  font-weight: normal;
+  /*Normal*/
+}
+.secundario .barra .logo__bold {
+  font-weight: 700;
+}
+.secundario .barra .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+}
+.secundario .barra .menu .link {
+  margin-right: 2rem;
+}
+@media (min-width: 768px) {
+  .secundario .barra {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.secundario .header__texto {
+  margin-top: 5rem;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .secundario .header__texto {
+    margin-top: 15rem;
+  }
 }
