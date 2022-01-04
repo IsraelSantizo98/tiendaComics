@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="build/css/app.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="build/css/app.css">
+    <script src="https://kit.fontawesome.com/1085598771.js" crossorigin="anonymous"></script>
     <title>MangaGT</title>
 </head>
 <body>
     <header class="principal">
         <div class="barra">
-            <a href="index.php">
-                <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
+            <a href="index.html" class="logo">
+                <h1 class="logo__texto centrar-texto texto-normal no-margin">Manga<span class="texto-bold">GT</span></h1>
             </a>
             <nav>
                 <ul class="menu">
-                    <li><a href="catalogo.php" class="link">Catalogo</a></li>
-                    <li><a href="ofertas.php" class="link">Ofertas</a></li>
-                    <li><a href="cuenta.php" class="link">Cuenta</a></li>
+                    <li><a href="catalogo.html" class="link">Catalogo</a></li>
+                    <li><a href="ofertas.html" class="link">Ofertas</a></li>
+                    <li><a href="cuenta.html" class="link">Cuenta</a></li>
                 </ul>
             </nav>
-            <form action="catalogo.php" method="POST">
+            <form action="catalogo.html" method="POST" class="form">
                 <input type="text" name="buscar">
-                <input type="submit" value="Buscar">
+                <button type="submit"><i class="fas fa-search"></i></button>
+                <!-- <button type="" value="Buscar" class="btn buscar"> -->
             </form>
         </div>
         <div class="header__texto centrar-texto">
@@ -38,7 +38,7 @@
     </header>
     <div class="contenedor">
         <h2 class="centrar-texto ">Ultimos Ingresados</h2>
-        <main class="contenido-principal section">
+        <main class="contenido-grid section">
             <div class="producto">
                 <div class="producto__imagen">
                     <picture>
@@ -105,7 +105,92 @@
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
-        </main>    
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin">100.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/kimetsu1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin">100.00</p>
+                </div>
+            </div><!-- /producto -->
+        </main>
+        <h2 class="centrar-texto">Ofertas</h2>
+        <section class="section contenido-grid">
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/onepunch1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+        </section>    
     </div>
     <footer class="footer section">
         <div class="contenedor">
