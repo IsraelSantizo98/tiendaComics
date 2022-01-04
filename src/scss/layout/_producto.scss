@@ -1,18 +1,38 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 .contenido-principal{
-    @include m.gridRow(3, 4rem);
+    @include m.gridRow(4, 1rem);
     .producto{
         transition: all 0.5s ease-in-out;
         &:hover{
             transform: scale(1.1);
         }
-        .producto__imagen,
-        .producto__descripcion{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        
+    }
+}
+.contenido-grid{
+    @include m.gridTest(2rem);
+    .producto{
+        transition: all 0.5s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
         }
+        
+    }
+}
+.producto__imagen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .border-descuento{
+        text-decoration: line-through;
+    }
+    .font-descuento{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .font-precio{
+        font-size: 2rem;
     }
 }
