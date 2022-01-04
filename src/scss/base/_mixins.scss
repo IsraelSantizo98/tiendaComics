@@ -24,6 +24,11 @@
     grid-template-columns: repeat($columnas, 1fr);
     gap: 5rem;
 }
+@mixin gridTest ($espaciado){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: $espaciado;
+}
 @mixin gridRow ($columnas, $espaciado){
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
