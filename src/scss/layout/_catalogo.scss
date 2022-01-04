@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.secundario{
+    background-image: url(../../../build/img/chainsawmanbanner.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 60rem;
+    .barra{
+        background-color: rgba(0,0,0,0.6);
+        padding: 2rem;
+        .logo__nombres{
+            font-weight: normal;/*Normal*/
+        }
+        .logo__bold{
+            font-weight: 700;
+        }
+        .menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100%;
+            .link{
+                margin-right: 2rem;
+            }
+        }
+    }
+    @include m.tablet {
+        .barra{
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .header__texto{
+        margin-top: 5rem;
+        color: v.$blanco;
+    }
+    @include m.tablet {
+        .header__texto{
+            margin-top: 15rem;
+        }
+    }
+}
