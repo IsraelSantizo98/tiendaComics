@@ -26,7 +26,7 @@ img{
     display:block;
 }
 .imgH{
-    height: 48rem;
+    height: 30rem;
 }
 a{
     text-decoration: none;
@@ -58,16 +58,21 @@ body{
     display: block;
     text-align: center;
     margin: 0 auto;
-    background-color: v.$rojo;
-    width: 20rem;
     transition: all .5s ease-in-out;
     padding: 1rem 2rem;
     &:hover{
         transform: scale(1.1);
     }
 }
+.buscar{
+    width: 5rem;
+    
+}
 .texto-bold{
     font-weight: bold; /*700*/
+}
+.texto-normal{
+    font-weight: normal;/*400*/
 }
 .border-top{
     border-top: 1rem solid v.$negro;
