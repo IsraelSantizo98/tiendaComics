@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1085598771.js" crossorigin="anonymous"></script>
     <title>MangaGT</title>
 </head>
 <body>
     <header class="secundario">
         <div class="barra">
-            <a href="index.html">
-                <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
+            <a href="index.html" class="logo">
+                <h1 class="logo__texto centrar-texto texto-normal no-margin">Manga<span class="logo__bold">GT</span></h1>
             </a>
             <nav>
                 <ul class="menu">
@@ -24,9 +25,9 @@
                     <li><a href="cuenta.html" class="link">Cuenta</a></li>
                 </ul>
             </nav>
-            <form action="catalogo.php" method="POST">
+            <form action="catalogo.html" method="POST" class="form">
                 <input type="text" name="buscar">
-                <input type="submit" value="Buscar">
+                <button type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </header>
@@ -142,8 +143,8 @@
                 </a>
                 <nav>
                     <ul class="menu">
-                        <li><a href="#" class="link">Catalogo</a></li>
-                        <li><a href="#" class="link">Ofertas</a></li>
+                        <li><a href="cata" class="link">Catalogo</a></li>
+                        <li><a href="ofertas.html" class="link">Ofertas</a></li>
                         <li><a href="#" class="link">Cuenta</a></li>
                     </ul>
                 </nav>
