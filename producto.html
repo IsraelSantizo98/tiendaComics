@@ -1,123 +1,130 @@
-<?php
-    include 'php/conection.php';
-    $idProducto = $_GET['codProducto'];
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="build/css/app.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1085598771.js" crossorigin="anonymous"></script>
     <title>MangaGT</title>
 </head>
 <body>
-    <header>
+    <header class="header-producto">
         <div class="barra">
-            <a href="index.php">
-                <h1 class="centrar-texto logo_nombre no-margin">Manga<span class="logo__bold">GT</span></h1>
+            <a href="index.html" class="logo">
+                <h1 class="centrar-texto logo-texto no-margin">Manga<span class="logo__bold">GT</span></h1>
             </a>
             <nav>
                 <ul class="menu">
-                    <li><a href="#" class="link">Catalogo</a></li>
+                    <li><a href="catalogo.html" class="link">Catalogo</a></li>
                     <li><a href="ofertas.html" class="link">Ofertas</a></li>
                     <li><a href="#" class="link">Cuenta</a></li>
                 </ul>
             </nav>
+            <form action="catalogo.html" method="POST" class="form">
+                <input type="text" name="buscar">
+                <button type="submit" class="btn-secundario"><i class="fas fa-search"></i></button>
+                <!-- <button type="" value="Buscar" class="btn buscar"> -->
+            </form>
         </div>
     </header>
     <div class="contenedor section">
         <main class="contenido-producto">
-            <?php
-                $instruccion = "SELECT * FROM catalogo
-                INNER JOIN editorial ON catalogo.FK_editorial = editorial.idEditorial
-                INNER JOIN saga ON catalogo.FK_saga = saga.idSaga
-                INNER JOIN precio ON catalogo.FK_precio = precio.Idprecio
-                INNER JOIN categoria ON catalogo.FK_categoria = categoria.idCategoria
-                INNER JOIN pasta ON catalogo.FK_pasta = pasta.idPasta
-                WHERE idCatalogo = '$idProducto'";
-                //$instruccion = "SELECT * FROM catalogo WHERE idCatalogo = '$idProducto'";
-                $query = mysqli_query($conection, $instruccion);
-                while ($row = mysqli_fetch_assoc($query)) {
-            ?>
             <div class="producto__imagen">
                 <picture>
-                    <img src="<?= $row['portada']?>" alt="Chainsaw Man V1" class="imgH">
+                        <source loading="lazy" srcset="build/img/chainsawman1.webp" type="image/webp" class="imgH">
+                        <img loading="lazy" src="src/img/onepunch1.jpg" alt="Portada Manga" class="imgH">
                 </picture>
             </div>
-            <div class="producto__descripcion">
-                <h2 class="no-margin"><?= $row['nombre']?></h2>
-                <span>Volumen <?= $row['volumen']?></span>
-                <p class="centrar-texto"><?= $row['descripcion']?></p>
-            </div>
-            <div class="producto__badge">
-                <p class="centrar-texto">
-                    <span class="capsulas badge"><?= $row['genero']?></span>
-                    <span class="capsulas badge"><?= $row['genero']?></span>
-                    <span class="capsulas badge"><?= $row['genero']?></span>
+            <div class="descripcion-producto centrar-texto">
+                <h2 class="no-margin ">Chainsaw Man</h2>
+                <p class="">Volumen #1</p>
+                <p class="descripcion-manga">
+                    Denji es un chico huérfano y pobre que trabaja como devil hunter junto con Pochita, el demonio perruno de la motosierra, para unos yakuza. Estos también desean el poder de los demonios y atacan a Denji y a Pochita, pero, al borde de la muerte, los dos se unen para formar a Chainsaw Man y logran salvarse. Makima, una devil hunter de Seguridad Pública, llega a la escena y recluta a Denji para que trabaje para ella. Y la promesa de una vida mejor trabajando al lado de la bella joven lo motiva
                 </p>
             </div>
-            <div class="producto__precio">
-                <p class="centrar-texto">Existencia <?= $row['existencia']?></>
-                <p class="centrar-texto">Q<?= $row['precioNormal']?>.00</>
-                <div class="producto__comprar">
+            <div class="producto-badge">
+                <p class="centrar-texto">
+                    <span class="capsulas badge">Shonen</span>
+                    <span class="capsulas badge">Horror</span>
+                    <span class="capsulas badge">Ficcion</span>
+                </p>
+            </div>
+            <div class="producto-precio centrar-texto">
+                <p class="">Q100.00</>
+                <p class="producto-existencia">En Existencia</>
+                <div class="producto-comprar">
                     <a href="#" class="btn btn-primario">Comprar</a>
                 </div>
             </div>
         </main>
-        <div class="section producto__detalle border-top">
+        <div class="section producto-detalle border-top">
             <h2 class="centrar-texto">Detalles del producto</h2>
             <ul class="centrar-texto">
                 <li>Tipo de producto: <span class="texto-bold">Individuales</span></li>
                 <li>Categorías: <span class="texto-bold">Mangas</span></li>
-                <li>Marca: <span class="texto-bold"><?= $row['nombreEdi']?></span></li>
+                <li>Marca: <span class="texto-bold">Panini Mexico</span></li>
                 <!-- <li>Autor(es): <span class="texto-bold">Tatsuki Fujimoto</span></li> -->
-                <li>Número de páginas: <span><?= $row['paginas']?></span></li>
-                <li>Encuadernación: <span class="texto-bold"><?= $row['tipoPasta']?></span></li>
-                <li>Fecha de lanzamiento: <span class="texto-bold"><?= $row['fechaLanzamiento']?></span></li>
+                <li>Número de páginas: <span>192</span></li>
+                <li>Encuadernación: <span class="texto-bold">Suave</span></li>
+                <li>Fecha de lanzamiento: <span class="texto-bold">10/12/2021</span></li>
             </ul>
         </div>
-        <?php
-            }
-        ?>
-        <div class="producto__recomendados section">
-            <h2>Recomendados</h2>
-            <div class="contenido__recomendados">
-                <div class="producto">
-                    <div class="recomendado__imagen">
-                        <picture>
-                            <img src="img/blackcover1.jpg" alt="VOl1">
-                        </picture>
-                    </div>
-                </div> <!-- /recomendado -->
-                <div class="producto">
-                    <div class="recomendado__imagen">
-                        <picture>
-                            <img src="img/onepunch1.jpg" alt="VOl1">
-                        </picture>
-                    </div>
-                </div> <!-- /recomendado -->
-                <div class="producto">
-                    <div class="recomendado__imagen">
-                        <picture>
-                            <img src="img/kimetsu1.jpg" alt="VOl1">
-                        </picture>
-                    </div>
-                </div> <!-- /recomendado -->
-                <div class="producto">
-                    <div class="recomendado__imagen">
-                        <picture>
-                            <img src="img/jujutsu1.jpg" alt="VOl1">
-                        </picture>
-                    </div>
-                </div> <!-- /recomendado -->
-            </div>
-        </div>
+        <h2 class="centrar-texto">Recomendados</h2>
+        <section class="section contenido-grid">
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+            <div class="producto">
+                <div class="producto__imagen">
+                    <picture>
+                        <a href="catalogo.html" alt="Portada Manga">
+                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
+                        </a>
+                    </picture>
+                    <h3 class="no-margin">Chainsaw Man</h3>
+                    <p class="no-margin border-descuento font-descuento">100.00</p>
+                    <p class="no-margin font-precio">80.00</p>
+                </div>
+            </div><!-- /producto -->
+        </section>
     </div>
     <footer class="footer section">
         <div class="contenedor">
@@ -127,8 +134,8 @@
                 </a>
                 <nav>
                     <ul class="menu">
-                        <li><a href="#" class="link">Catalogo</a></li>
-                        <li><a href="#" class="link">Ofertas</a></li>
+                        <li><a href="catalogo.html" class="link">Catalogo</a></li>
+                        <li><a href="ofertas.html" class="link">Ofertas</a></li>
                         <li><a href="#" class="link">Cuenta</a></li>
                     </ul>
                 </nav>
