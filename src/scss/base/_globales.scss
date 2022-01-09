@@ -55,14 +55,19 @@ body{
     margin-top: 5rem;
 }
 .btn{
-    display: block;
+    display: inline-block;
     text-align: center;
     margin: 0 auto;
     transition: all .5s ease-in-out;
+    border-radius: 1rem;
     padding: 1rem 2rem;
     &:hover{
         transform: scale(1.1);
     }
+}
+.btn-primario{
+    color: v.$negro;
+    background-color: v.$rojo;
 }
 .buscar{
     width: 5rem;
