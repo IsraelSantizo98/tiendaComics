@@ -20,6 +20,11 @@
         
     }
 }
+.header-producto{
+    .logo-texto{
+        margin-bottom: 1rem;
+    }
+}
 .producto__imagen{
     display: flex;
     flex-direction: column;
@@ -34,5 +39,33 @@
     }
     .font-precio{
         font-size: 2rem;
+    }
+}
+.descripcion-producto{
+    .descripcion-manga{
+        line-height: 1.5;
+    }
+}
+.producto-badge{
+    p span{
+        padding: 1rem 2rem;
+        background-color: v.$naranja;
+        border-radius: 1rem;
+        color: v.$blanco;
+    }
+}
+.producto-precio{
+    margin-top: 2rem;
+    .producto-existencia{
+        padding: 1rem 2rem;
+        background-color: v.$verde;
+        border-radius: 1rem;
+        color: v.$blanco;
+    }
+}
+.producto-detalle{
+    ul li{
+        margin-bottom: .5rem;
+        text-align: center;
     }
 }
