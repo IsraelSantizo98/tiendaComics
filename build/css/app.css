@@ -442,7 +442,7 @@ template {
 }
 
 .principal {
-  background-image: url(../../../build/img/hxh.webp);
+  background-image: url(../img/hxh.webp);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -471,7 +471,7 @@ template {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 0.2rem;
   background-color: #fff;
   width: 100%;
@@ -673,7 +673,7 @@ template {
 }
 
 .secundario {
-  background-image: url(../../../build/img/chainsawmanbanner.webp);
+  background-image: url(../img/chainsawmanbanner.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

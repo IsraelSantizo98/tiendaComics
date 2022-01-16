@@ -5,7 +5,10 @@ const {src, dest, watch, parallel} = require('gulp');
 const sass = require ("gulp-sass")(require('sass'));
 const plumber = require('gulp-plumber');
 //Imagenes
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
 const webp = require ('gulp-webp');
+const avif= require('gulp-avif');
 function css (done){
     //Se asigna la ruta donde esta el archivo a compilar y los asteriscos le dice que todos los archivos con esa extension
     src('src/scss/**/*.scss')
@@ -16,6 +19,15 @@ function css (done){
         //Donde almacena el archivo compilado
         .pipe(dest('build/css'))
     //Finaliza la tarea    
+    done();
+}
+function imagenes(done){
+    const opciones = {
+        optimizationLevel: 3
+    }
+    src('src/img/**/*.{png,jpg}')
+        .pipe(cache(imagemin(opciones)))
+        .pipe (dest('build/img'))
     done();
 }
 function versionWebp(done){
@@ -32,6 +44,15 @@ function versionWebp(done){
     //Finaliza la tarea
     done();
 }
+function versionAvif(done){
+    const opciones = {
+        quality: 50
+    };
+    src('src/img/**/*.{png,jpg}')
+        .pipe(avif(opciones))
+        .pipe(dest('build/img'))
+    done();
+}
 function dev(done){
     watch('src/scss/**/*.scss', css)
     done();
@@ -39,4 +60,4 @@ function dev(done){
 //Habilitar las funciones y poder mandarlas a llamar
 exports.css = css;
 exports.versionWebp = versionWebp;
-exports.dev = parallel(versionWebp, dev);
+exports.dev = parallel(versionWebp, imagenes, dev, versionAvif);
