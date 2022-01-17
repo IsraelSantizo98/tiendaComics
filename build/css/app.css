@@ -441,75 +441,111 @@ template {
   display: none;
 }
 
-.principal {
-  background-image: url(../img/hxh.webp);
-  background-position: right top;
+.banner {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 60rem;
+  background-image: none;
+  background-color: #000;
+  height: 40rem;
 }
-.principal .barra {
+@media (min-width: 992px) {
+  .banner {
+    height: 80rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .bannner-principal {
+    background-image: url(../img/hxh.webp);
+    background-position: center right;
+  }
+
+  .banner-catalogo {
+    background-image: url(../img/chainsawmanbanner.webp);
+    background-position: center center;
+  }
+
+  .banner-oferta {
+    background-image: url(../img/jujutsuBanner.webp);
+    background-position: center right;
+  }
+}
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
 }
-.principal .barra .logo .logo-texto {
+.barra .logo .logo-texto {
   font-size: 4rem;
   margin-bottom: 1rem;
 }
-.principal .barra .menu {
+.barra .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0;
   height: 100%;
 }
-.principal .barra .menu .link {
+.barra .menu .link {
   margin-right: 2rem;
 }
-.principal .barra .form {
+.barra .form {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 2rem;
   border-radius: 0.2rem;
   background-color: #fff;
-  width: 100%;
+  width: 30rem;
   height: 3rem;
 }
-.principal .barra .form input {
+.barra .form input {
   border-radius: 1rem;
   width: 100%;
   border: none;
 }
-.principal .barra .form input:focus-visible {
+.barra .form input:focus-visible {
   outline: none;
 }
-.principal .barra .form button {
+.barra .form button {
   border: none;
   background-color: #fff;
 }
 @media (min-width: 768px) {
-  .principal .barra {
-    display: flex;
-    justify-content: space-around;
-  }
-  .principal .barra .logo {
-    padding: 1rem;
-  }
-}
-.principal .header__texto {
-  margin-top: 12rem;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem 0;
-}
-@media (min-width: 768px) {
-  .principal .header__texto {
-    margin-top: 15rem;
+  .barra .form {
+    margin-top: 0;
   }
 }
 
+@media (min-width: 768px) {
+  .barra {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .barra .logo {
+    padding: 1rem;
+  }
+}
+.header__texto {
+  margin-top: 2rem;
+  color: #000;
+  background-color: #fff;
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .header__texto {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__texto {
+    margin-top: 15rem;
+  }
+}
 .header-producto .barra {
   background-color: #000;
   padding: 2rem;
@@ -670,68 +706,4 @@ template {
 .producto-detalle ul li {
   margin-bottom: 0.5rem;
   text-align: center;
-}
-
-.secundario {
-  background-image: url(../img/chainsawmanbanner.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 60rem;
-}
-.secundario .barra {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-}
-.secundario .barra .logo__texto {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-.secundario .barra .menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  height: 100%;
-}
-.secundario .barra .menu .link {
-  margin-right: 2rem;
-}
-.secundario .barra .form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  border-radius: 0.2rem;
-  background-color: #fff;
-  width: 100%;
-  height: 3rem;
-}
-.secundario .barra .form input {
-  border-radius: 1rem;
-  width: 100%;
-  border: none;
-}
-.secundario .barra .form input:focus-visible {
-  outline: none;
-}
-.secundario .barra .form button {
-  border: none;
-  background-color: #fff;
-}
-@media (min-width: 768px) {
-  .secundario .barra {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-.secundario .header__texto {
-  margin-top: 5rem;
-  color: #fff;
-}
-@media (min-width: 768px) {
-  .secundario .header__texto {
-    margin-top: 15rem;
-  }
 }
