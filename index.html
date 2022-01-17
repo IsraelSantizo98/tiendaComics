@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="build/css/app.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="anonymous" as="font">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     <title>MangaGT</title>
 </head>
 <body>
-    <header class="principal">
+    <header class="banner bannner-principal">
         <div class="barra">
             <a href="index.html" class="logo">
                 <h1 class="logo-texto centrar-texto texto-normal no-margin">Manga<span class="texto-bold">GT</span></h1>
@@ -27,8 +27,8 @@
                 </ul>
             </nav>
             <form action="catalogo.html" method="POST" class="form">
-                <input type="text" name="buscar">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input type="text" name="buscar" aria-label="Buscar" placeholder="¿Qué Buscas?">
+                <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
                 <!-- <button type="" value="Buscar" class="btn buscar"> -->
             </form>
         </div>
@@ -42,88 +42,104 @@
         <main class="contenido-grid section">
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman1.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman1.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman1.jpg" alt="Chainsawman 1">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman2.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman2.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman2.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman2.jpg" alt="Chainsawman 2">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman3.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman3.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman3.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman3.jpg" alt="Chainsawman 3">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman4.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman4.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman4.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman4.jpg" alt="Chainsawman 4">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman5.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman5.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman5.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman5.jpg" alt="Chainsawman 5">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman6.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman6.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman6.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman6.jpg" alt="Chainsawman 6">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/fireforce7.avif" type="image/avif">
+                            <source srcset="build\img\fireforce7.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/fireforce7.jpg" alt="Fire Forece 7">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="producto.html" alt="Portada Manga">
-                            <img src="build/img/kimetsu1.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="producto.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/kimetsu1.avif" type="image/avif">
+                            <source srcset="build/img/kimetsu1.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/kimetsu1.jpg" alt="Kimetsu 1">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin">100.00</p>
                 </div>
@@ -133,11 +149,13 @@
         <section class="section contenido-grid">
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="catalogo.html" alt="Portada Manga">
-                            <img src="build/img/chainsawman1.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="ofertas.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/onepunch1.avif" type="image/avif">
+                            <source srcset="build/img/onepunch1.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/onepunch1.jpg" alt="One Punch 1">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin border-descuento font-descuento">100.00</p>
                     <p class="no-margin font-precio">80.00</p>
@@ -149,12 +167,13 @@
                     <img loading="lazy" src="img/blog1.jpg" alt="Imagen Blog">
                 </picture> -->
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="catalogo.html" alt="Portada Manga">
-                            <source loading="lazy" srcset="build/img/onepunch1.webp" type="image/webp" class="imgH">
-                            <img loading="lazy" src="src/img/onepunch1.jpg" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="ofertas.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/ataquetitanes22.avif" type="image/avif">
+                            <source srcset="build/img/ataquetitanes22.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/ataquetitanes22.jpg" alt="Ataque de los Titanes 22">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin border-descuento font-descuento">100.00</p>
                     <p class="no-margin font-precio">80.00</p>
@@ -162,11 +181,13 @@
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="catalogo.html" alt="Portada Manga">
-                            <img src="build/img/fireforce7.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="ofertas.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/chainsawman6.avif" type="image/avif">
+                            <source srcset="build/img/chainsawman6.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/chainsawman6.jpg" alt="Chainsawman 6">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin border-descuento font-descuento">100.00</p>
                     <p class="no-margin font-precio">80.00</p>
@@ -174,11 +195,13 @@
             </div><!-- /producto -->
             <div class="producto">
                 <div class="producto__imagen">
-                    <picture>
-                        <a href="catalogo.html" alt="Portada Manga">
-                            <img src="build/img/jujutsu1.webp" alt="Portada Manga" class="imgH">
-                        </a>
-                    </picture>
+                    <a href="ofertas.html" aria-label="Manga">
+                        <picture>
+                            <source srcset="build/img/jujutsu1.avif" type="image/avif">
+                            <source srcset="build/img/jujutsu1.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/jujutsu1.jpg" alt="Jujutsu Kaisen 1">
+                        </picture>
+                    </a>
                     <h3 class="no-margin">Chainsaw Man</h3>
                     <p class="no-margin border-descuento font-descuento">100.00</p>
                     <p class="no-margin font-precio">80.00</p>
